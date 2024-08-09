@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Calculator | vikaslahare</title>
+    <style>
+        body {
+            background: color #f9f9f9;;
+        }
+
+.calculator {
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(240, 169, 169, 0.1);
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+
+    
+   
+}
+
+#display {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    padding: 1px;
+    font-size: 24px;
+    text-align: right;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #eee;
+}
+
+.number {
+    background-color: #f5f5f5;
+}
+
+.operator {
+    background-color: #ffa500;
+    color: #fff;
+}
+
+.clear {
+    background-color: #ff3333;
+    color: #fff;
+}
+
+.equal {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+.h1 h1{
+   color:darkgreen;
+   font-weight: bold;
+   text-align: center;
+   margin-top: 2%;
+}
+    </style>
+</head>
+<body>
+   <div class="h1"> <h1>Responsive Calculator | vikas lahare</h1></div>
+
+    <div class="calculator">  
+
+        <input type="text" id="display" disabled>
+        <div class="buttons">
+            <button class="number" data-value="1">1</button>
+            <button class="number" data-value="2">2</button>
+            <button class="number" data-value="3">3</button>
+            <button class="operator" data-value="/">/</button>
+
+            <button class="number" data-value="4">4</button>           
+            <button class="number" data-value="5">5</button>
+            <button class="number" data-value="6">6</button>
+            <button class="operator" data-value="*">*</button>
+            
+
+            <button class="number" data-value="7">7</button>
+            <button class="number" data-value="8">8</button>
+            <button class="number" data-value="9">9</button>
+            <button class="operator" data-value="+">+</button>
+             
+            <button class="number" data-value="0">0</button>
+            <button class="equal" data-value="=">=</button>
+            <button class="clear" data-value="C">C</button>
+            <button class="operator" data-value="-">-</button> 
+            <button class="decimal" data-value=".">.</button>
+            <button class="" data-value=""></button>
+            <button class="" data-value=""></button>
+            <button class="" data-value=""></button> 
+        </div>
+    </div>
+
+    <script>
+        const display = document.getElementById('display');
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        const value = button.dataset.value;
+
+        if (value === '=') {
+            try {
+                display.value = eval(display.value);
+            } catch (error) {
+                display.value = 'Error';
+            }
+        } else if (value === 'C') {
+            display.value = '';
+        } else {
+            display.value += value;
+        }
+    });
+});
+
+    </script>
+</body>
+</html>
