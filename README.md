@@ -9,5 +9,5 @@ git clone https://github.com/CryptoQuestVikas/Animated-Calculator.git
 cd Animated-Calculator
 ```
 
-# **Screenshot
+# **Screenshot**
 ![](/img/cal.png)
