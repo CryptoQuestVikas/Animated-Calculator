@@ -1,4 +1,4 @@
-# Animated-Calculator
+# Responsive Animated-Calculator
 
 # **Languages:**
 > HTML CSS JAVASCRIPT ``I'm using internal css and javascript so remenber this``
